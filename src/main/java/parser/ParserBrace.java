@@ -8,12 +8,12 @@ public class ParserBrace {
      * Содержит все не лишние открывающие рамки и
      * соответствующие им закрывающие.
      */
-    private Map<Integer, List<Node>> forSearch;
+    protected Map<Integer, List<Node>> forSearch;
 
     /**
      * Содержит позиции всех скобок в строке.
      */
-    private List<Integer> allBracesPositions;
+    protected List<Integer> allBracesPositions;
 
     /**
      * @param input
@@ -52,7 +52,7 @@ public class ParserBrace {
      * @param input
      * @return
      */
-    private void walkOverString(String input) {
+    protected void walkOverString(String input) {
         int keyMark = 0;
         forSearch = new HashMap<>();
         allBracesPositions = new ArrayList<>();
@@ -85,7 +85,7 @@ public class ParserBrace {
      * @param input
      * @return
      */
-    private Set<List<Integer>> combinationsGrabber(String input) {
+    protected Set<List<Integer>> combinationsGrabber(String input) {
         Set<List<Integer>> result = new HashSet<>();
         Set<List<Integer>> bufferResult = new HashSet<>();
         int checkSize = forSearch.size() * 2;
